@@ -1,0 +1,26 @@
+#设置mysql数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/heng?serverTimezone=GMT%2b8
+    username: root
+    password: 123
+    #解决swagger中Caused by: java.lang.NullPointerException: null
+
+#设置后台的端口
+server:
+  port: 9090
+
+#配置mybatis,扫描所有mybatis的xml文件
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #运行时可在窗口看到对应sql语句
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#改用mybatis-plus:
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
